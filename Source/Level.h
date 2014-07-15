@@ -16,5 +16,7 @@
 @property (nonatomic, copy) CCSprite *hero;
 @property (nonatomic, copy) CCNode *block1;
 @property (nonatomic, copy) CCNode *block2;
+@property (nonatomic, assign) int score;
 
+-(BOOL) returnsTrueAndHasNoParameters;
 @end

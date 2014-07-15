@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		250C946B1974596900C7881D /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 250C946A1974596900C7881D /* Level.m */; };
+		250C94721974990700C7881D /* CCActionFollow+CurrentOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */; };
 		25F0C0501963688D00ABDF0F /* GamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F0C04F1963688D00ABDF0F /* GamePlay.m */; };
 		25F0C05819636EA700ABDF0F /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F0C05719636EA700ABDF0F /* Character.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		250C94691974596900C7881D /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		250C946A1974596900C7881D /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
+		250C94701974990700C7881D /* CCActionFollow+CurrentOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCActionFollow+CurrentOffset.h"; path = "Source/CCActionFollow+CurrentOffset.h"; sourceTree = "<group>"; };
+		250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCActionFollow+CurrentOffset.m"; path = "Source/CCActionFollow+CurrentOffset.m"; sourceTree = "<group>"; };
 		25F0C04E1963688D00ABDF0F /* GamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlay.h; path = Source/GamePlay.h; sourceTree = "<group>"; };
 		25F0C04F1963688D00ABDF0F /* GamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamePlay.m; path = Source/GamePlay.m; sourceTree = "<group>"; };
 		25F0C05619636EA700ABDF0F /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				250C94701974990700C7881D /* CCActionFollow+CurrentOffset.h */,
+				250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */,
 				250C94691974596900C7881D /* Level.h */,
 				250C946A1974596900C7881D /* Level.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
@@ -361,6 +366,7 @@
 				25F0C0501963688D00ABDF0F /* GamePlay.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				250C94721974990700C7881D /* CCActionFollow+CurrentOffset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

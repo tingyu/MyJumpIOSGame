@@ -47,6 +47,7 @@ static NSString *selectedLevel = @"Level1";
     _hero = _loadedLevel.hero;
     _block1 = _loadedLevel.block1;
     _block2 = _loadedLevel.block2;
+    _score = _loadedLevel.score;
     // tell this scene to accept touches
     //self.userInteractionEnabled = TRUE;
     // CCScene *level = [CCBReader loadAsScene:@"Levels/block1"];
@@ -64,9 +65,9 @@ static NSString *selectedLevel = @"Level1";
 - (void)onEnter {
     [super onEnter];
     
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:[_loadedLevel boundingBox]];
+    //CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:[_loadedLevel boundingBox]];
    // _physicsNode.position = [follow currentOffset];
-    [_physicsNode runAction:follow];
+    //[_physicsNode runAction:follow];
 }
 
 - (void)onEnterTransitionDidFinish {
@@ -117,18 +118,25 @@ static NSString *selectedLevel = @"Level1";
 
 // called on every touch in this scene
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    [_hero.physicsBody applyImpulse:ccp(0, 400.f)];
-    /*
+    //[_hero.physicsBody applyImpulse:ccp(0, 400.f)];
+    
     [_hero.physicsBody.chipmunkObjects[0] eachArbiter:^(cpArbiter *arbiter) {
         if (!_jumped) {
             [_hero.physicsBody applyImpulse:ccp(0, 2000)];
             _jumped = TRUE;
             [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.3f];
         }
-    }];*/
+    }];
     
     // we want to know the location of our touch in this scene
     touchLocation = [touch locationInNode:self];
+}
+
+
+#pragma mark - Player Movement
+
+- (void)resetJump {
+    _jumped = FALSE;
 }
 
 - (void)update:(CCTime)delta {
@@ -155,10 +163,38 @@ static NSString *selectedLevel = @"Level1";
         }
     }
 
-    
     // clamp velocity
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
    _hero.physicsBody.velocity = ccp(0, yVelocity);
+    
+    //if (CGRectGetMaxY([_hero boundingBox]) <   CGRectGetMinY([_physicsNode boundingBox])) {
+    if (_hero.position.y < -1*CGRectGetMinY([_physicsNode boundingBox])) {
+        [self gameOver];
+    }
+    
+    CCLOG(@"the hero position is x:%0.2f, y:%0.2f", _hero.position.x, _hero.position.y);
+    CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
+    CCLOG(@"the boundingBox Y position is y:%0.2f", CGRectGetMinY([_physicsNode boundingBox]));
+
+
+}
+
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)hero star:(CCNode *)star {
+ //   [star removeFromParent];
+ //   _score++;
+
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    
+    return YES;
+}
+
+#pragma mark - Game Over
+
+- (void)gameOver {
+    CCScene *restartScene = [CCBReader loadAsScene:@"MainScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:restartScene withTransition:transition];
 }
 
 

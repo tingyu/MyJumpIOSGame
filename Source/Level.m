@@ -21,6 +21,15 @@ static const CGFloat rightSpeed = 40.f;
     NSArray *_blocks;
     BOOL _jumped;
     CGPoint touchLocation;
+    int _score;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)hero star:(CCNode *)star {
+    [star removeFromParent];
+    _score++;
+    //_scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    
+    return YES;
 }
 /*
 // called on every touch in this scene
