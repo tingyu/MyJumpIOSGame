@@ -60,7 +60,7 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string>enemy</string>
+			<string>bonus</string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
@@ -78,32 +78,32 @@
 					<real>0.0</real>
 				</array>
 				<array>
-					<real>0.230438232421875</real>
-					<real>17.609390258789062</real>
+					<real>0.0</real>
+					<real>31</real>
 				</array>
 				<array>
-					<real>62.996063232421875</real>
-					<real>21.597671508789062</real>
+					<real>34</real>
+					<real>31</real>
 				</array>
 				<array>
-					<real>62.898406982421875</real>
-					<real>4.7500152587890625</real>
+					<real>34</real>
+					<real>0.0</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>62.898406982421875</real>
-						<real>4.7500152587890625</real>
+						<real>34</real>
+						<real>0.0</real>
 					</array>
 					<array>
-						<real>62.996063232421875</real>
-						<real>21.597671508789062</real>
+						<real>34</real>
+						<real>31</real>
 					</array>
 					<array>
-						<real>0.230438232421875</real>
-						<real>17.609390258789062</real>
+						<real>0.0</real>
+						<real>31</real>
 					</array>
 					<array>
 						<real>0.0</real>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>MyNewJumpAssets/logistic/worm.png</string>
+					<string>MyNewJumpAssets/logistic/star.png</string>
 				</array>
 			</dict>
 			<dict>

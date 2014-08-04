@@ -8,7 +8,7 @@
 
 #import "CCNode.h"
 
-@interface Level : CCNode
+@interface Level : CCNode<CCPhysicsCollisionDelegate>
 
 @property (nonatomic, copy) NSString *nextLevelName;
 @property (nonatomic, assign) int levelSpeed;

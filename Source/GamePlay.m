@@ -23,6 +23,8 @@ static const CGFloat rightSpeed = 40.f;
 static NSString * const kFirstLevel = @"Level1";
 NSString *selectedLevel = @"Level1";
 //static int levelSpeed = 0;
+#define ARC4RANDOM_MAX      0x100000000
+
 
 
 @implementation GamePlay{
@@ -32,7 +34,8 @@ NSString *selectedLevel = @"Level1";
     CCNode *_block1;
     CCNode *_block2;
     CCNode *_star;
-    CCNode *_enemy;
+    //CCNode *_enemy;
+
     NSArray *_blocks;
     BOOL _jumped;
     CGPoint touchLocation;
@@ -43,12 +46,15 @@ NSString *selectedLevel = @"Level1";
     int _score;
     int count;
     CCAction *_followHero;
+    
+    CCNode *enemy;
+    CCNode *bonus;
 }
 
 
 // is called when CCB file has completed loading
 - (void)didLoadFromCCB {
-    _physicsNode.collisionDelegate = self;
+    //_physicsNode.collisionDelegate = self;
     CCLOG(@"selectedLevel x:%s", selectedLevel);
     _loadedLevel = (Level *) [CCBReader load:selectedLevel owner:self];
     [_levelNode addChild:_loadedLevel];
@@ -60,7 +66,11 @@ NSString *selectedLevel = @"Level1";
     _score = _loadedLevel.score;
     count = 0;
     _star = _loadedLevel.star;
-    _enemy = _loadedLevel.enemy;
+    //_enemy = _loadedLevel.enemy;
+    
+    _physicsNode.collisionDelegate = self;
+    _hero.physicsBody.collisionType = @"hero";
+    //_enemy.physicsBody.collisionType = @"enemy";
     // tell this scene to accept touches
     //self.userInteractionEnabled = TRUE;
     // CCScene *level = [CCBReader loadAsScene:@"Levels/block1"];
@@ -72,18 +82,46 @@ NSString *selectedLevel = @"Level1";
     //_physicsNode.debugDraw = TRUE;
     
     _blocks = @[_block1, _block2];
+    [self launchEnemy];
     
 }
 
 - (void)launchEnemy {
     // loads the Penguin.ccb we have set up in Spritebuilder
-    CCNode* enemy = [CCBReader load:@"Enemy"];
+    //CCNode* enemy = [CCBReader load:@"Enemy"];
+    enemy = [CCBReader load:@"Enemy"];
     // position the penguin at the bowl of the catapult
-    enemy.position = ccp(150, 150);
-    
+    //enemy.position = ccp(150, 150);
+    [self setupRandomPosition:enemy];
+    enemy.physicsBody.collisionType = @"enemy";
     // add the penguin to the physicsNode of this scene (because it has physics enabled)
     [_physicsNode addChild:enemy];
-    
+}
+
+- (void)launchBonus {
+    // loads the Penguin.ccb we have set up in Spritebuilder
+    //CCNode* enemy = [CCBReader load:@"Enemy"];
+    bonus = [CCBReader load:@"Bonus"];
+    // position the penguin at the bowl of the catapult
+    //enemy.position = ccp(150, 150);
+    [self setupRandomPosition:bonus];
+    bonus.physicsBody.collisionType = @"bonus";
+    // add the penguin to the physicsNode of this scene (because it has physics enabled)
+    [_physicsNode addChild:bonus];
+}
+
+- (void)setupRandomPosition:(CCNode*)character{
+    // value between 0.f and 1.f
+    CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
+    CGFloat rangeY = [[CCDirector sharedDirector] viewSize].height;
+    CGFloat rangeX = [[CCDirector sharedDirector] viewSize].width;
+    character.position = ccp(-_physicsNode.position.x + rangeX*random, -_physicsNode.position.y + rangeY*random);
+
+    CCLOG(@"the random is %0.2f", random);
+    CCLOG(@"the range position is x:%0.2f, y:%0.2f", rangeX, rangeY);
+    CCLOG(@"the hero position is x:%0.2f, y:%0.2f", _hero.position.x, _hero.position.y);
+    CCLOG(@"the enemy position is x:%0.2f, y:%0.2f", character.position.x, character.position.y);
+    CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
 }
 
 - (void)onEnter {
@@ -212,6 +250,14 @@ NSString *selectedLevel = @"Level1";
             block.position = ccp(block.position.x, block.position.y  + 2 * block.contentSize.height);
         }
     }
+    
+    if(_hero.position.y > enemy.position.y){
+    //    [self launchEnemy];
+    }
+    
+    if(_hero.position.y > bonus.position.y){
+        [self launchBonus];
+    }
 
     // clamp velocity
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
@@ -234,16 +280,50 @@ NSString *selectedLevel = @"Level1";
 
 }
 /*
-- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair enemy:(CCNode *)enemy wildcard:(CCNode *)nodeB {
+- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair hero:(CCNode *)hero wildcard:(CCNode *)nodeB {
     CCLOG(@"Something collided with a seal!");
     
     float energy = [pair totalKineticEnergy];
     
     // if energy is large enough, remove the seal
     if (energy > 5000.f) {
-        [self sealRemoved:enemy];
+        [self sealRemoved:_enemy];
     }
 }*/
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)nodeA enemy:(CCNode *)nodeB
+{
+    CCLOG(@"Something collided with a Enemy!");
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"EnemyExplosion"];
+    // make the particle effect clean itself up, once it is completed
+    explosion.autoRemoveOnFinish = TRUE;
+    // place the particle effect on the seals position
+    explosion.position = enemy.position;
+    // add the particle effect to the s
+    // add the particle effect to the same node the seal is on
+    [enemy.parent addChild:explosion];
+    [enemy removeFromParent];
+    [self gameOver];
+    return YES;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)nodeA bonus:(CCNode *)nodeB
+{
+    CCLOG(@"Something collided with a Bonus!");
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"BonusExplosion"];
+    // make the particle effect clean itself up, once it is completed
+    explosion.autoRemoveOnFinish = TRUE;
+    // place the particle effect on the seals position
+    explosion.position = bonus.position;
+    // add the particle effect to the same node the seal is on
+    [bonus.parent addChild:explosion];
+    // finally, remove the destroyed bonus
+    [bonus removeFromParent];
+    _score+=2;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    return YES;
+}
+
 
 
 - (void)sealRemoved:(CCNode *)seal {
@@ -261,6 +341,7 @@ NSString *selectedLevel = @"Level1";
 }
 
 //- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)_hero enemy:(CCNode *)_enemy {
+/*
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)hero wildcard:(CCNode *)nodeB {
     NSLog(@"Collision2");
     CCLOG(@"Something collided with a seal!");
@@ -272,7 +353,7 @@ NSString *selectedLevel = @"Level1";
     //_scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     
     return YES;
-}
+}*/
 
 
 #pragma mark - Game Over

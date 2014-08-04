@@ -7,6 +7,7 @@
 //
 
 #import "Level.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
 static const CGFloat scrollSpeed = 80.f;
 static const CGFloat leftSpeed = 40.f;
