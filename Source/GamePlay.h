@@ -8,6 +8,8 @@
 
 #import "CCNode.h"
 
+extern NSString *selectedLevel;
+
 @interface GamePlay : CCNode<CCPhysicsCollisionDelegate>
 
 @end

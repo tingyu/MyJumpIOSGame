@@ -16,6 +16,7 @@ static const CGFloat rightSpeed = 40.f;
     CCPhysicsNode *_physicsNode;
     CCNode *_levelNode;
     CCSprite *_hero;
+
     CCNode *_block1;
     CCNode *_block2;
     NSArray *_blocks;
@@ -23,14 +24,14 @@ static const CGFloat rightSpeed = 40.f;
     CGPoint touchLocation;
     int _score;
 }
-
+/*
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hero:(CCNode *)hero star:(CCNode *)star {
     [star removeFromParent];
     _score++;
     //_scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     
     return YES;
-}
+}*/
 /*
 // called on every touch in this scene
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -78,6 +79,8 @@ static const CGFloat rightSpeed = 40.f;
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
     _hero.physicsBody.velocity = ccp(0, yVelocity);
 }*/
+
+
 
 
 

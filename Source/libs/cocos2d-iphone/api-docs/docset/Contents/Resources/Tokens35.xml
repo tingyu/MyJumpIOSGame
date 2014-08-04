@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CCActionInterval.html">
+	<File path="Classes/CCActionFlipY.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CCActionInterval</TokenIdentifier>
-			<Abstract type="html">An interval action is an action that takes place within a certain period of time.
-It has an start time, and a finish time. The finish time is the parameter
-duration plus the start time.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CCActionFlipY</TokenIdentifier>
+			<Abstract type="html">This action will lips the target in y direction.</Abstract>
+			<DeclaredIn>CCActionInstant.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -15,96 +13,36 @@ duration plus the start time.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionInterval/setElapsed:</TokenIdentifier>
-			<Abstract type="html">How many seconds had elapsed since the actions started to run.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CCActionFlipY/actionWithFlipY:</TokenIdentifier>
+			<Abstract type="html">Creates a flip action with y direction flipped or non flipped.</Abstract>
+			<DeclaredIn>CCActionInstant.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CCTime elapsed</Declaration>
-			
-			
-			<Anchor>//api/name/elapsed</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionInterval/elapsed</TokenIdentifier>
-			<Abstract type="html">How many seconds had elapsed since the actions started to run.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CCTime elapsed</Declaration>
-			
-			
-			<Anchor>//api/name/elapsed</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CCActionInterval/elapsed</TokenIdentifier>
-			<Abstract type="html">How many seconds had elapsed since the actions started to run.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CCTime elapsed</Declaration>
-			
-			
-			<Anchor>//api/name/elapsed</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCActionInterval/actionWithDuration:</TokenIdentifier>
-			<Abstract type="html">Creates and returns an action interval object.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
-			
-			<Declaration>+ (id)actionWithDuration:(CCTime)d</Declaration>
+			<Declaration>+ (id)actionWithFlipY:(BOOL)y</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>d</Name>
-					<Abstract type="html">Action interval.</Abstract>
+					<Name>y</Name>
+					<Abstract type="html">Defines if target is flipped.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The CCActionInterval object.</Abstract></ReturnValue>
-			<Anchor>//api/name/actionWithDuration:</Anchor>
+			<ReturnValue><Abstract type="html">The flip action object.</Abstract></ReturnValue>
+			<Anchor>//api/name/actionWithFlipY:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionInterval/initWithDuration:</TokenIdentifier>
-			<Abstract type="html">Initializes and returns an action interval object.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCActionFlipY/initWithFlipY:</TokenIdentifier>
+			<Abstract type="html">Initializes a flip action with y direction flipped or non flipped</Abstract>
+			<DeclaredIn>CCActionInstant.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithDuration:(CCTime)d</Declaration>
+			<Declaration>- (id)initWithFlipY:(BOOL)y</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>d</Name>
-					<Abstract type="html">Action interval.</Abstract>
+					<Name>y</Name>
+					<Abstract type="html">Defines if target is flipped</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized CCActionInterval Object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDuration:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionInterval/isDone</TokenIdentifier>
-			<Abstract type="html">Returns YES if the action has finished.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isDone</Declaration>
-			
-			<ReturnValue><Abstract type="html">Action finished status.</Abstract></ReturnValue>
-			<Anchor>//api/name/isDone</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionInterval/reverse</TokenIdentifier>
-			<Abstract type="html">Returns a reversed action.</Abstract>
-			<DeclaredIn>CCActionInterval.h</DeclaredIn>
-			
-			<Declaration>- (CCActionInterval *)reverse</Declaration>
-			
-			<ReturnValue><Abstract type="html">Created reversed action.</Abstract></ReturnValue>
-			<Anchor>//api/name/reverse</Anchor>
+			<ReturnValue><Abstract type="html">The initialized flip action object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFlipY:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

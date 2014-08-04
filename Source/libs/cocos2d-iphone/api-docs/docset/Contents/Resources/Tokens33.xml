@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CCActionFollow.html">
+	<File path="Classes/CCActionFadeTo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CCActionFollow</TokenIdentifier>
-			<Abstract type="html">Creates an action which follows a node.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CCActionFadeTo</TokenIdentifier>
+			<Abstract type="html">This action fades the target, it modifies the opacity from the current value to the specified value.
+Notes:
+Works with cascadeOpacity, if you want children to fade too.</Abstract>
+			<DeclaredIn>CCActionInterval.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -13,112 +15,42 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionFollow/setBoundarySet:</TokenIdentifier>
-			<Abstract type="html">Turns boundary behaviour on / off.  If set to YES, movement will be clamped to boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CCActionFadeTo/actionWithDuration:opacity:</TokenIdentifier>
+			<Abstract type="html">Creates a fade action.</Abstract>
+			<DeclaredIn>CCActionInterval.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readwrite) BOOL boundarySet</Declaration>
-			
-			
-			<Anchor>//api/name/boundarySet</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionFollow/boundarySet</TokenIdentifier>
-			<Abstract type="html">Turns boundary behaviour on / off.  If set to YES, movement will be clamped to boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) BOOL boundarySet</Declaration>
-			
-			
-			<Anchor>//api/name/boundarySet</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CCActionFollow/boundarySet</TokenIdentifier>
-			<Abstract type="html">Turns boundary behaviour on / off.  If set to YES, movement will be clamped to boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite) BOOL boundarySet</Declaration>
-			
-			
-			<Anchor>//api/name/boundarySet</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCActionFollow/actionWithTarget:</TokenIdentifier>
-			<Abstract type="html">Creates a follow action with no boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>+ (id)actionWithTarget:(CCNode *)followedNode</Declaration>
+			<Declaration>+ (id)actionWithDuration:(CCTime)duration opacity:(CGFloat)opactiy</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>followedNode</Name>
-					<Abstract type="html">Node to follow.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The follow action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/actionWithTarget:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCActionFollow/actionWithTarget:worldBoundary:</TokenIdentifier>
-			<Abstract type="html">Creates a follow action with boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>+ (id)actionWithTarget:(CCNode *)followedNode worldBoundary:(CGRect)rect</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>followedNode</Name>
-					<Abstract type="html">Node to follow.</Abstract>
+					<Name>duration</Name>
+					<Abstract type="html">Action duration.</Abstract>
 				</Parameter><Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">Boundary rect.</Abstract>
+					<Name>opactiy</Name>
+					<Abstract type="html">Opacity to fade to.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The follow action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/actionWithTarget:worldBoundary:</Anchor>
+			<ReturnValue><Abstract type="html">New fade action.</Abstract></ReturnValue>
+			<Anchor>//api/name/actionWithDuration:opacity:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionFollow/initWithTarget:</TokenIdentifier>
-			<Abstract type="html">Initalizes a follow action with no boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCActionFadeTo/initWithDuration:opacity:</TokenIdentifier>
+			<Abstract type="html">Initalizes a fade action.</Abstract>
+			<DeclaredIn>CCActionInterval.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithTarget:(CCNode *)followedNode</Declaration>
+			<Declaration>- (id)initWithDuration:(CCTime)duration opacity:(CGFloat)opacity</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>followedNode</Name>
-					<Abstract type="html">Node to follow.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized follow action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithTarget:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionFollow/initWithTarget:worldBoundary:</TokenIdentifier>
-			<Abstract type="html">Initalizes a follow action with boundaries.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithTarget:(CCNode *)followedNode worldBoundary:(CGRect)rect</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>followedNode</Name>
-					<Abstract type="html">Node to follow.</Abstract>
+					<Name>duration</Name>
+					<Abstract type="html">Action duration.</Abstract>
 				</Parameter><Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">Boundary rect.</Abstract>
+					<Name>opacity</Name>
+					<Abstract type="html">Opacity to fade to.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The initalized follow action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithTarget:worldBoundary:</Anchor>
+			<ReturnValue><Abstract type="html">New fade action.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDuration:opacity:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		

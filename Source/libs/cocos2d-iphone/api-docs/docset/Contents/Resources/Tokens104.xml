@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/CCPhysicsCollisionDelegate.html">
+	<File path="Classes/CCSpriteFrame.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/CCPhysicsCollisionDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate type called when two physics bodies collide.</Abstract>
-			<DeclaredIn>CCPhysicsNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CCSpriteFrame</TokenIdentifier>
+			<Abstract type="html">A CCSpriteFrame contains the texture and rectangle of the texture to be used by a CCSprite.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
             
 			
 			<NodeRef refid="104"/>
@@ -13,99 +13,351 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CCPhysicsCollisionDelegate/ccPhysicsCollisionBegin:typeA:typeB:</TokenIdentifier>
-			<Abstract type="html">Begin methods are called on the first fixed time step when two bodies begin colliding.
-If you return NO from a begin method, the collision between the two bodies will be ignored.</Abstract>
-			<DeclaredIn>CCPhysicsNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setRect:</TokenIdentifier>
+			<Abstract type="html">Rectangle of the frame in points. If it is updated, then rectInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair typeA:(CCNode *)nodeA typeB:(CCNode *)nodeB</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pair</Name>
-					<Abstract type="html">Collision pair.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeA</Name>
-					<Abstract type="html">Node A.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeB</Name>
-					<Abstract type="html">Node B.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL</Abstract></ReturnValue>
-			<Anchor>//api/name/ccPhysicsCollisionBegin:typeA:typeB:</Anchor>
+			<Declaration>@property (nonatomic, readonly) CGRect rect</Declaration>
+			
+			
+			<Anchor>//api/name/rect</Anchor>
             <NodeRef refid="104"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CCPhysicsCollisionDelegate/ccPhysicsCollisionPreSolve:typeA:typeB:</TokenIdentifier>
-			<Abstract type="html">Pre-solve methods are called every fixed time step when two bodies are in contact before the physics solver runs.
-This gives you a chance to modify the collision&apos;s outcome by setting properties such as friction, restitution, or surfaceVelocity on CCPhysicsCollisionPair
-Since the collisions have not been solved yet, you cannot access the outcome by using properties such as totalKineticEnergy or totalImpulse.
-If you return NO from a pre-solve method, the collision will be ignored for the current time step.</Abstract>
-			<DeclaredIn>CCPhysicsNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/rect</TokenIdentifier>
+			<Abstract type="html">Rectangle of the frame in points. If it is updated, then rectInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)ccPhysicsCollisionPreSolve:(CCPhysicsCollisionPair *)pair typeA:(CCNode *)nodeA typeB:(CCNode *)nodeB</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pair</Name>
-					<Abstract type="html">Collision pair.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeA</Name>
-					<Abstract type="html">Node A.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeB</Name>
-					<Abstract type="html">Node B.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL</Abstract></ReturnValue>
-			<Anchor>//api/name/ccPhysicsCollisionPreSolve:typeA:typeB:</Anchor>
+			<Declaration>@property (nonatomic, readonly) CGRect rect</Declaration>
+			
+			
+			<Anchor>//api/name/rect</Anchor>
             <NodeRef refid="104"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CCPhysicsCollisionDelegate/ccPhysicsCollisionPostSolve:typeA:typeB:</TokenIdentifier>
-			<Abstract type="html">Post-solve methods are called every fixed time step when two bodies are in contact after the physics solver runs.
-You can call use properties such as totalKineticEnergy and totalImpulse on CCPhysicsCollisionPair from a post-solve method.</Abstract>
-			<DeclaredIn>CCPhysicsNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/rect</TokenIdentifier>
+			<Abstract type="html">Rectangle of the frame in points. If it is updated, then rectInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
 			
-			<Declaration>- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair typeA:(CCNode *)nodeA typeB:(CCNode *)nodeB</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pair</Name>
-					<Abstract type="html">Collision pair.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeA</Name>
-					<Abstract type="html">Node A.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeB</Name>
-					<Abstract type="html">Node B.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) CGRect rect</Declaration>
 			
-			<Anchor>//api/name/ccPhysicsCollisionPostSolve:typeA:typeB:</Anchor>
+			
+			<Anchor>//api/name/rect</Anchor>
             <NodeRef refid="104"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CCPhysicsCollisionDelegate/ccPhysicsCollisionSeparate:typeA:typeB:</TokenIdentifier>
-			<Abstract type="html">Separate methods are called the first fixed time step after two bodies stop colliding.</Abstract>
-			<DeclaredIn>CCPhysicsNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setRotated:</TokenIdentifier>
+			<Abstract type="html">Is the frame rectangle is rotated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
 			
-			<Declaration>- (void)ccPhysicsCollisionSeparate:(CCPhysicsCollisionPair *)pair typeA:(CCNode *)nodeA typeB:(CCNode *)nodeB</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL rotated</Declaration>
+			
+			
+			<Anchor>//api/name/rotated</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/rotated</TokenIdentifier>
+			<Abstract type="html">Is the frame rectangle is rotated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL rotated</Declaration>
+			
+			
+			<Anchor>//api/name/rotated</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/rotated</TokenIdentifier>
+			<Abstract type="html">Is the frame rectangle is rotated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL rotated</Declaration>
+			
+			
+			<Anchor>//api/name/rotated</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setOffset:</TokenIdentifier>
+			<Abstract type="html">Offset of the frame in points.  If it is updated, then offsetInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/offset</TokenIdentifier>
+			<Abstract type="html">Offset of the frame in points.  If it is updated, then offsetInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/offset</TokenIdentifier>
+			<Abstract type="html">Offset of the frame in points.  If it is updated, then offsetInPixels will also be updated.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint offset</Declaration>
+			
+			
+			<Anchor>//api/name/offset</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setOriginalSize:</TokenIdentifier>
+			<Abstract type="html">Original size of the trimmed image in points.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGSize originalSize</Declaration>
+			
+			
+			<Anchor>//api/name/originalSize</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/originalSize</TokenIdentifier>
+			<Abstract type="html">Original size of the trimmed image in points.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGSize originalSize</Declaration>
+			
+			
+			<Anchor>//api/name/originalSize</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/originalSize</TokenIdentifier>
+			<Abstract type="html">Original size of the trimmed image in points.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGSize originalSize</Declaration>
+			
+			
+			<Anchor>//api/name/originalSize</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setTexture:</TokenIdentifier>
+			<Abstract type="html">Texture of the frame.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) CCTexture *texture</Declaration>
+			
+			
+			<Anchor>//api/name/texture</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/texture</TokenIdentifier>
+			<Abstract type="html">Texture of the frame.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) CCTexture *texture</Declaration>
+			
+			
+			<Anchor>//api/name/texture</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/texture</TokenIdentifier>
+			<Abstract type="html">Texture of the frame.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) CCTexture *texture</Declaration>
+			
+			
+			<Anchor>//api/name/texture</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/setTextureFilename:</TokenIdentifier>
+			<Abstract type="html">Texture image file name, when created from a texture image.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *textureFilename</Declaration>
+			
+			
+			<Anchor>//api/name/textureFilename</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/textureFilename</TokenIdentifier>
+			<Abstract type="html">Texture image file name, when created from a texture image.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *textureFilename</Declaration>
+			
+			
+			<Anchor>//api/name/textureFilename</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteFrame/textureFilename</TokenIdentifier>
+			<Abstract type="html">Texture image file name, when created from a texture image.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *textureFilename</Declaration>
+			
+			
+			<Anchor>//api/name/textureFilename</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CCSpriteFrame/frameWithImageNamed:</TokenIdentifier>
+			<Abstract type="html">Create and return a sprite frame object from the specified image name.  On first attempt it will check CCSpriteFrameCache and if not available will then try and create from an image file of the same name.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>+ (id)frameWithImageNamed:(NSString *)imageName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>pair</Name>
-					<Abstract type="html">Collision pair.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeA</Name>
-					<Abstract type="html">Node A.</Abstract>
-				</Parameter><Parameter>
-					<Name>nodeB</Name>
-					<Abstract type="html">Node B.</Abstract>
+					<Name>imageName</Name>
+					<Abstract type="html">Image name.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">The CCSpriteFrame Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/frameWithImageNamed:</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CCSpriteFrame/frameWithTexture:rectInPixels:rotated:offset:originalSize:</TokenIdentifier>
+			<Abstract type="html">Create and return a sprite frame object from the specified texture, texture rectangle, rotation status, offset and originalSize values.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
 			
-			<Anchor>//api/name/ccPhysicsCollisionSeparate:typeA:typeB:</Anchor>
+			<Declaration>+ (id)frameWithTexture:(CCTexture *)texture rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>texture</Name>
+					<Abstract type="html">Texture to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">Texture rectangle (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rotated</Name>
+					<Abstract type="html">Is rectangle rotated?</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Offset (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>originalSize</Name>
+					<Abstract type="html">Original size (in pixels) before being trimmed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CCSpriteFrame Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/frameWithTexture:rectInPixels:rotated:offset:originalSize:</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CCSpriteFrame/frameWithTextureFilename:rectInPixels:rotated:offset:originalSize:</TokenIdentifier>
+			<Abstract type="html">Create and return a sprite frame object from the specified texture file name, texture rectangle, rotation status, offset and originalSize values.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>+ (id)frameWithTextureFilename:(NSString *)filename rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">Image file name to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">Texture rectangle (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rotated</Name>
+					<Abstract type="html">Is rectangle rotated?</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Offset (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>originalSize</Name>
+					<Abstract type="html">Original size (in pixels) before being trimmed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CCSpriteFrame Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/frameWithTextureFilename:rectInPixels:rotated:offset:originalSize:</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/initWithTexture:rectInPixels:rotated:offset:originalSize:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a sprite frame object from the specified texture, texture rectangle, rotation status, offset and originalSize values.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithTexture:(CCTexture *)texture rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>texture</Name>
+					<Abstract type="html">Texture to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">Texture rectangle (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rotated</Name>
+					<Abstract type="html">Is rectangle rotated?</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Offset (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>originalSize</Name>
+					<Abstract type="html">Original size (in pixels) before being trimmed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized CCSpriteFrame Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithTexture:rectInPixels:rotated:offset:originalSize:</Anchor>
+            <NodeRef refid="104"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteFrame/initWithTextureFilename:rectInPixels:rotated:offset:originalSize:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a sprite frame object from the specified texture file name, texture rectangle, rotation status, offset and originalSize values.</Abstract>
+			<DeclaredIn>CCSpriteFrame.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithTextureFilename:(NSString *)filename rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">Image file name to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">Texture rectangle (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>rotated</Name>
+					<Abstract type="html">Is rectangle rotated?</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Offset (in pixels) to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>originalSize</Name>
+					<Abstract type="html">Original size (in pixels) before being trimmed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized CCSpriteFrame Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithTextureFilename:rectInPixels:rotated:offset:originalSize:</Anchor>
             <NodeRef refid="104"/>
 		</Token>
 		

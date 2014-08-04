@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CCActionRepeatForever.html">
+	<File path="Classes/CCActionProgressTo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CCActionRepeatForever</TokenIdentifier>
-			<Abstract type="html">Repeats an action for ever.
-To repeat the action for a limited number of times use the CCActionRepeat action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CCActionProgressTo</TokenIdentifier>
+			<Abstract type="html">This action is for use with the CCProgressNode to control the progression to animation.</Abstract>
+			<DeclaredIn>CCActionProgressTimer.h</DeclaredIn>
             
 			
 			<NodeRef refid="45"/>
@@ -14,72 +13,42 @@ To repeat the action for a limited number of times use the CCActionRepeat action
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionRepeatForever/setInnerAction:</TokenIdentifier>
-			<Abstract type="html">Inner action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CCActionProgressTo/actionWithDuration:percent:</TokenIdentifier>
+			<Abstract type="html">Creates a progress action.</Abstract>
+			<DeclaredIn>CCActionProgressTimer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readwrite, strong) CCActionInterval *innerAction</Declaration>
-			
-			
-			<Anchor>//api/name/innerAction</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionRepeatForever/innerAction</TokenIdentifier>
-			<Abstract type="html">Inner action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, strong) CCActionInterval *innerAction</Declaration>
-			
-			
-			<Anchor>//api/name/innerAction</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CCActionRepeatForever/innerAction</TokenIdentifier>
-			<Abstract type="html">Inner action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readwrite, strong) CCActionInterval *innerAction</Declaration>
-			
-			
-			<Anchor>//api/name/innerAction</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCActionRepeatForever/actionWithAction:</TokenIdentifier>
-			<Abstract type="html">Creates the repeat forever action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
-			
-			<Declaration>+ (id)actionWithAction:(CCActionInterval *)action</Declaration>
+			<Declaration>+ (id)actionWithDuration:(CCTime)duration percent:(float)percent</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>action</Name>
-					<Abstract type="html">Action to repeat forever.</Abstract>
+					<Name>duration</Name>
+					<Abstract type="html">Action duration.</Abstract>
+				</Parameter><Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Percentage.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The repeat action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/actionWithAction:</Anchor>
+			<ReturnValue><Abstract type="html">New prgress action.</Abstract></ReturnValue>
+			<Anchor>//api/name/actionWithDuration:percent:</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCActionRepeatForever/initWithAction:</TokenIdentifier>
-			<Abstract type="html">Initalizes the repeat forever action.</Abstract>
-			<DeclaredIn>CCAction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCActionProgressTo/initWithDuration:percent:</TokenIdentifier>
+			<Abstract type="html">Initializes a progress action.</Abstract>
+			<DeclaredIn>CCActionProgressTimer.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithAction:(CCActionInterval *)action</Declaration>
+			<Declaration>- (id)initWithDuration:(CCTime)duration percent:(float)percent</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>action</Name>
-					<Abstract type="html">Action to repeat forever</Abstract>
+					<Name>duration</Name>
+					<Abstract type="html">Action duration.</Abstract>
+				</Parameter><Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Percentage.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An initialised repeat action object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAction:</Anchor>
+			<ReturnValue><Abstract type="html">New progress action.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDuration:percent:</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		

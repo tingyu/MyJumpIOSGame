@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/CCSpriteBatchNode.html">
+	<File path="Classes/CCProgressNode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/CCSpriteBatchNode</TokenIdentifier>
-			<Abstract type="html">A CCSpriteBatchNode offers improved rendering performance for multiple sprite rendering by utilising a single OpenGL call to render all sprites from one (and only one) texture (one image file, one texture atlas), often knows as a &apos;batch draw&apos;.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CCProgressNode</TokenIdentifier>
+			<Abstract type="html">CCProgressNode displays a sprite with a progressive reveal.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
             
 			
 			<NodeRef refid="93"/>
@@ -13,132 +13,252 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteBatchNode/setBlendFunc:</TokenIdentifier>
-			<Abstract type="html">Blend mode.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setType:</TokenIdentifier>
+			<Abstract type="html">	Progress type. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readwrite) ccBlendFunc blendFunc</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CCProgressNodeType type</Declaration>
 			
 			
-			<Anchor>//api/name/blendFunc</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteBatchNode/blendFunc</TokenIdentifier>
-			<Abstract type="html">Blend mode.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/type</TokenIdentifier>
+			<Abstract type="html">	Progress type. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readwrite) ccBlendFunc blendFunc</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CCProgressNodeType type</Declaration>
 			
 			
-			<Anchor>//api/name/blendFunc</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/CCSpriteBatchNode/blendFunc</TokenIdentifier>
-			<Abstract type="html">Blend mode.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/type</TokenIdentifier>
+			<Abstract type="html">	Progress type. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readwrite) ccBlendFunc blendFunc</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CCProgressNodeType type</Declaration>
 			
 			
-			<Anchor>//api/name/blendFunc</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCSpriteBatchNode/batchNodeWithTexture:</TokenIdentifier>
-			<Abstract type="html">Creates and returns a batch node with the specified texture value.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setReverseDirection:</TokenIdentifier>
+			<Abstract type="html">	Reverse progress direction. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>+ (id)batchNodeWithTexture:(CCTexture *)tex</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>tex</Name>
-					<Abstract type="html">Texture to use.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The CCSpriteBatchNode Object.</Abstract></ReturnValue>
-			<Anchor>//api/name/batchNodeWithTexture:</Anchor>
+			<Declaration>@property (nonatomic, readwrite) BOOL reverseDirection</Declaration>
+			
+			
+			<Anchor>//api/name/reverseDirection</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/CCSpriteBatchNode/batchNodeWithFile:</TokenIdentifier>
-			<Abstract type="html">Creates and returns a batch node with the specified image file value.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/reverseDirection</TokenIdentifier>
+			<Abstract type="html">	Reverse progress direction. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>+ (id)batchNodeWithFile:(NSString *)fileImage</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>fileImage</Name>
-					<Abstract type="html">Image file name.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The CCSpriteBatchNode Object.</Abstract></ReturnValue>
-			<Anchor>//api/name/batchNodeWithFile:</Anchor>
+			<Declaration>@property (nonatomic, readwrite) BOOL reverseDirection</Declaration>
+			
+			
+			<Anchor>//api/name/reverseDirection</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteBatchNode/initWithTexture:capacity:</TokenIdentifier>
-			<Abstract type="html">Creates and returns a batch node with the specified texture and capacity values.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/reverseDirection</TokenIdentifier>
+			<Abstract type="html">	Reverse progress direction. </Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>tex</Name>
-					<Abstract type="html">Texture to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>capacity</Name>
-					<Abstract type="html">Initial capacity.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized CCSpriteBatchNode Object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithTexture:capacity:</Anchor>
+			<Declaration>@property (nonatomic, readwrite) BOOL reverseDirection</Declaration>
+			
+			
+			<Anchor>//api/name/reverseDirection</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteBatchNode/initWithFile:capacity:</TokenIdentifier>
-			<Abstract type="html">Creates and returns a batch node with the specified texture and capacity values.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setMidpoint:</TokenIdentifier>
+			<Abstract type="html">Progress start position.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>fileImage</Name>
-					<Abstract type="html">Image file name.</Abstract>
-				</Parameter><Parameter>
-					<Name>capacity</Name>
-					<Abstract type="html">Initial capacity.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An initialized CCSpriteBatchNode Object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFile:capacity:</Anchor>
+			<Declaration>@property (nonatomic, readwrite) CGPoint midpoint</Declaration>
+			
+			
+			<Anchor>//api/name/midpoint</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CCSpriteBatchNode/removeChild:cleanup:</TokenIdentifier>
-			<Abstract type="html">Removes a sprite from the batch node.</Abstract>
-			<DeclaredIn>CCSpriteBatchNode.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/midpoint</TokenIdentifier>
+			<Abstract type="html">Progress start position.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Declaration>- (void)removeChild:(CCSprite *)sprite cleanup:(BOOL)doCleanup</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGPoint midpoint</Declaration>
+			
+			
+			<Anchor>//api/name/midpoint</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/midpoint</TokenIdentifier>
+			<Abstract type="html">Progress start position.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint midpoint</Declaration>
+			
+			
+			<Anchor>//api/name/midpoint</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setBarChangeRate:</TokenIdentifier>
+			<Abstract type="html">Bar change rate.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint barChangeRate</Declaration>
+			
+			
+			<Anchor>//api/name/barChangeRate</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/barChangeRate</TokenIdentifier>
+			<Abstract type="html">Bar change rate.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint barChangeRate</Declaration>
+			
+			
+			<Anchor>//api/name/barChangeRate</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/barChangeRate</TokenIdentifier>
+			<Abstract type="html">Bar change rate.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint barChangeRate</Declaration>
+			
+			
+			<Anchor>//api/name/barChangeRate</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setPercentage:</TokenIdentifier>
+			<Abstract type="html">Progress percentage.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) float percentage</Declaration>
+			
+			
+			<Anchor>//api/name/percentage</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/percentage</TokenIdentifier>
+			<Abstract type="html">Progress percentage.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) float percentage</Declaration>
+			
+			
+			<Anchor>//api/name/percentage</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/percentage</TokenIdentifier>
+			<Abstract type="html">Progress percentage.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite) float percentage</Declaration>
+			
+			
+			<Anchor>//api/name/percentage</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/setSprite:</TokenIdentifier>
+			<Abstract type="html">The Sprite to use.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, strong) CCSprite *sprite</Declaration>
+			
+			
+			<Anchor>//api/name/sprite</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/sprite</TokenIdentifier>
+			<Abstract type="html">The Sprite to use.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, strong) CCSprite *sprite</Declaration>
+			
+			
+			<Anchor>//api/name/sprite</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CCProgressNode/sprite</TokenIdentifier>
+			<Abstract type="html">The Sprite to use.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, strong) CCSprite *sprite</Declaration>
+			
+			
+			<Anchor>//api/name/sprite</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CCProgressNode/progressWithSprite:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a progress node object using the specified sprite value.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
+			
+			<Declaration>+ (id)progressWithSprite:(CCSprite *)sprite</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>sprite</Name>
-					<Abstract type="html">Sprite reference.</Abstract>
-				</Parameter><Parameter>
-					<Name>doCleanup</Name>
-					<Abstract type="html">Perform additional cleanup.</Abstract>
+					<Abstract type="html">The CCSprite to use.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">The CCProgressNode Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/progressWithSprite:</Anchor>
+            <NodeRef refid="93"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CCProgressNode/initWithSprite:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a progress node object using the specified sprite value.</Abstract>
+			<DeclaredIn>CCProgressNode.h</DeclaredIn>
 			
-			<Anchor>//api/name/removeChild:cleanup:</Anchor>
+			<Declaration>- (id)initWithSprite:(CCSprite *)sprite</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sprite</Name>
+					<Abstract type="html">The CCSprite to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An initialized CCProgressNode Object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSprite:</Anchor>
             <NodeRef refid="93"/>
 		</Token>
 		

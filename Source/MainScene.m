@@ -10,7 +10,12 @@
 
 @implementation MainScene
 - (void)startGame {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"GamePlay"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
+- (void)chooseMode {
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"LevelMenu"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 @end

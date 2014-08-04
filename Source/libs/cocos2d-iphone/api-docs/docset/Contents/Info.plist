@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>Cocos2D 3.0.Cocos2D-3.0</string>
+	<string>org.cocos2d.Cocos2D-Developer-Library</string>
 	<key>CFBundleName</key>
-	<string>Cocos2D 3.0 Documentation</string>
+	<string>Cocos2D Developer Library Documentation</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -16,11 +16,11 @@
 	
 	
 	<key>DocSetFallbackURL</key>
-	<string>http://www.cocos2d-iphone.org/Cocos2D</string>
+	<string>http://www.cocos2d-iphone.org/testpath1</string>
 	<key>DocSetFeedName</key>
-	<string>Cocos2D 3.0 Documentation</string>
+	<string>Cocos2D Developer Library Documentation</string>
 	<key>DocSetFeedURL</key>
-	<string>http://www.cocos2d-iphone.org/Cocos2D/Cocos2D.atom</string>
+	<string>http://www.cocos2d-iphone.org/testpath1/testpath4.atom</string>
 	<key>DocSetMinimumXcodeVersion</key>
 	<string>3.0</string>
 	<key>DocSetPlatformFamily</key>
@@ -28,10 +28,10 @@
 	<key>DashDocSetFamily</key>
 	<string>appledoc</string>
 	<key>DocSetPublisherIdentifier</key>
-	<string>Cocos2D 3.0.documentation</string>
+	<string>org.cocos2d.documentation</string>
 	<key>DocSetPublisherName</key>
-	<string>Cocos2D</string>
+	<string>3.1.0</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2014 Cocos2D. All rights reserved.</string>
+	<string>Copyright © 2014 3.1.0. All rights reserved.</string>
 </dict>
 </plist>
