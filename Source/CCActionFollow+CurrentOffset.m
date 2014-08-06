@@ -18,7 +18,7 @@
             return [(CCNode *)_target position];
         
         CGPoint tempPos = ccpSub( _halfScreenSize, _followedNode.position);
-        return ccp(clampf(tempPos.x, _leftBoundary, _rightBoundary), clampf(tempPos.y, _bottomBoundary, _topBoundary));
+        return ccp(-1*clampf(tempPos.x, _leftBoundary, _rightBoundary), -1*clampf(tempPos.y, _bottomBoundary, _topBoundary));
     }
     else
         return ccpSub( _halfScreenSize, _followedNode.position );

@@ -15,7 +15,7 @@
 
 
 static const CGFloat scrollSpeed = 80.f;
-static const CGFloat scrollBackgroundSpeed = 20.f;
+static CGFloat scrollBackgroundSpeed = 0.f;
 //static const CGFloat scrollSpeed = 0.f;
 static const CGFloat leftSpeed = 40.f;
 static const CGFloat rightSpeed = 40.f;
@@ -115,18 +115,18 @@ NSString *selectedLevel = @"Level1";
     CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
     CGFloat rangeY = [[CCDirector sharedDirector] viewSize].height;
     CGFloat rangeX = [[CCDirector sharedDirector] viewSize].width;
-    character.position = ccp(-_physicsNode.position.x + rangeX*random, -_physicsNode.position.y + rangeY*random);
-
+    character.position = ccp(-_physicsNode.position.x + _hero.position.x + rangeX*random, -_physicsNode.position.y + _hero.position.y + rangeY*random);
+/*
     CCLOG(@"the random is %0.2f", random);
     CCLOG(@"the range position is x:%0.2f, y:%0.2f", rangeX, rangeY);
     CCLOG(@"the hero position is x:%0.2f, y:%0.2f", _hero.position.x, _hero.position.y);
     CCLOG(@"the enemy position is x:%0.2f, y:%0.2f", character.position.x, character.position.y);
-    CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
+    CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);*/
 }
 
 - (void)onEnter {
     [super onEnter];
-
+    srandom((unsigned int)time(NULL));
     //[self launchEnemy];
     /*
     CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:[_loadedLevel boundingBox]];
@@ -163,27 +163,6 @@ NSString *selectedLevel = @"Level1";
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
 }
 
-/*
--(void) check{
-    if(_hero.position.y > 39){
-        _hero.yVel -= 0.1;
-        //yVel -= 0.1;
-    }else{/*
-        if(yVel != 6){
-            yVel = 0;
-            xVel = 0;
-        }*/
-/*
-        if(_hero.yVel != 6){
-            _hero.yVel = 0;
-            _hero.xVel = 0;
-        }
-    }
-    _hero.position = ccp(_hero.position.x + _hero.xVel, _hero.position.y + _hero.yVel);
-    //_hero.position = ccp(_hero.position.x + xVel, _hero.position.y + yVel);
-    //CCLOG(@"Move!!");
-}
-*/
 
 // called on every touch in this scene
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -191,16 +170,16 @@ NSString *selectedLevel = @"Level1";
     
     [_hero.physicsBody.chipmunkObjects[0] eachArbiter:^(cpArbiter *arbiter) {
         if (!_jumped) {
-            [_hero.physicsBody applyImpulse:ccp(0, 1000)];
+            [_hero.physicsBody applyImpulse:ccp(0, 2000)];
+            //[_hero.physicsBody applyImpulse:CGVectorMake(0, 120)];
             _jumped = TRUE;
-            [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.3f];
+            [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.1f];
         }
     }];
     
     // we want to know the location of our touch in this scene
     touchLocation = [touch locationInNode:self];
 }
-
 
 #pragma mark - Player Movement
 
@@ -209,6 +188,8 @@ NSString *selectedLevel = @"Level1";
 }
 
 - (void)update:(CCTime)delta {
+    //_hero.position = ccp(touchLocation.x, touchLocation.y);
+    
     if (touchLocation.x < _hero.position.x) {
     _hero.position = ccp(_hero.position.x - delta * leftSpeed, _hero.position.y + delta * scrollSpeed);
     }else if (touchLocation.x > _hero.position.x){
@@ -216,11 +197,12 @@ NSString *selectedLevel = @"Level1";
     }else{
         _hero.position = ccp(_hero.position.x, _hero.position.y + delta * scrollSpeed);
     }
-    _hero.position = ccp(_hero.position.x, _hero.position.y + delta * scrollSpeed);
-    _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y  - (rightSpeed *delta));
+    //_hero.position = ccp(_hero.position.x, _hero.position.y + delta * scrollSpeed);
+    if((int)(_hero.position.y+1)%20 == 0) scrollBackgroundSpeed++;
+    _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y  - (scrollBackgroundSpeed *delta));
     
     /*
-    if(_hero.position.y > 600){
+    if(_hero.position.y > 400){
         _physicsNode.position = ccp(_physicsNode.position.x,  _physicsNode.contentSize.height - _hero.position.y + 200);
     }*/
    
@@ -230,9 +212,19 @@ NSString *selectedLevel = @"Level1";
     // follow the flying penguin
     //_followHero = [CCActionFollow actionWithTarget:_hero worldBoundary:_hero.boundingBox];
     //[_physicsNode runAction:_followHero];
+    /*
+    CCLOG(@"the Before _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:_levelNode.boundingBox];
+    CCLOG(@"the _levelNode position is x:%0.2f, y:%0.2f", _levelNode.boundingBox.size.width, _levelNode.boundingBox.size.height);
+    _physicsNode.position = [follow currentOffset];
+    CCLOG(@"the After _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
     
-    //CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:self.boundingBox];
-    //[self runAction:follow];
+    [_physicsNode runAction:follow];*/
+    /*
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:[_loadedLevel boundingBox]];
+    _physicsNode.position = [follow currentOffset];
+    [_physicsNode runAction:follow];*/
+
     /*
     CCActionFollow *follow = [CCActionFollow actionWithTarget:_hero worldBoundary:[_loadedLevel boundingBox]];
     _physicsNode.position = [follow currentOffset];
@@ -250,14 +242,14 @@ NSString *selectedLevel = @"Level1";
             block.position = ccp(block.position.x, block.position.y  + 2 * block.contentSize.height);
         }
     }
-    
+    /*
     if(_hero.position.y > enemy.position.y){
     //    [self launchEnemy];
     }
     
     if(_hero.position.y > bonus.position.y){
         [self launchBonus];
-    }
+    }*/
 
     // clamp velocity
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
@@ -269,10 +261,17 @@ NSString *selectedLevel = @"Level1";
     }
     
     //CCLOG(@"the hero position is x:%0.2f, y:%0.2f", _hero.position.x, _hero.position.y);
-    //CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
+   // CCLOG(@"the _physicsNode position is x:%0.2f, y:%0.2f", _physicsNode.position.x, _physicsNode.position.y);
     //CCLOG(@"the boundingBox Y position is y:%0.2f", CGRectGetMinY([_physicsNode boundingBox]));
 
     count++;
+    /*
+    if((count+1)%60 == 0){
+        [self launchBonus];
+    }
+    if(_hero.position.y > bonus.position.y){
+        [bonus removeFromParent];
+    }*/
     if((count+1)%60 == 0){
         _score++;
     }
@@ -314,12 +313,12 @@ NSString *selectedLevel = @"Level1";
     // make the particle effect clean itself up, once it is completed
     explosion.autoRemoveOnFinish = TRUE;
     // place the particle effect on the seals position
-    explosion.position = bonus.position;
+    explosion.position = nodeB.position;
     // add the particle effect to the same node the seal is on
-    [bonus.parent addChild:explosion];
+    [nodeB.parent addChild:explosion];
     // finally, remove the destroyed bonus
-    [bonus removeFromParent];
-    _score+=2;
+    [nodeB removeFromParent];
+    _score+=3;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     return YES;
 }
@@ -355,10 +354,16 @@ NSString *selectedLevel = @"Level1";
     return YES;
 }*/
 
+- (void)retry {
+    scrollBackgroundSpeed = 0.f;
+    CCScene *restartScene = [CCBReader loadAsScene:@"Gameplay"];
+    [[CCDirector sharedDirector] replaceScene:restartScene];
+}
 
 #pragma mark - Game Over
 
 - (void)gameOver {
+    scrollBackgroundSpeed = 0.f;
     CCScene *restartScene = [CCBReader loadAsScene:@"MainScene"];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:restartScene withTransition:transition];

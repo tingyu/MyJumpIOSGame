@@ -129,6 +129,16 @@
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
+		<key>MyNewJumpAssets/logistic/star.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>MyNewJumpAssets/logistic/worm.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
 		<key>MyNewJumpAssets/objects</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
@@ -229,6 +239,21 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>MyNewJumpAssets/objects/cookieBrown.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>MyNewJumpAssets/objects/cookieChoco.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>MyNewJumpAssets/objects/cookiePink.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
 		<key>MyNewJumpAssets/objects/fish.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -302,12 +327,17 @@
 		<key>MyNewJumpAssets/objects/tinyShroom_brown.png</key>
 		<dict>
 			<key>scaleFrom</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>MyNewJumpAssets/objects/tinyShroom_red.png</key>
 		<dict>
 			<key>scaleFrom</key>
-			<integer>1</integer>
+			<integer>2</integer>
+		</dict>
+		<key>MyNewJumpAssets/objects/tinyShroom_tan.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
 		</dict>
 		<key>Sprites</key>
 		<dict/>
