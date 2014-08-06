@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		250C946B1974596900C7881D /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 250C946A1974596900C7881D /* Level.m */; };
-		250C94721974990700C7881D /* CCActionFollow+CurrentOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */; };
 		25885F7F198F5AE20077BC02 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25885F7E198F5AE20077BC02 /* Enemy.m */; };
 		25B3F62D197F2A2700E3DA83 /* LevelMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B3F62C197F2A2700E3DA83 /* LevelMenu.m */; };
+		25BFAA441991B9A100E5C171 /* HowToPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BFAA431991B9A100E5C171 /* HowToPlay.m */; };
+		25BFAA481991DD5500E5C171 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BFAA471991DD5500E5C171 /* Score.m */; };
 		25F0C0501963688D00ABDF0F /* GamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F0C04F1963688D00ABDF0F /* GamePlay.m */; };
 		25F0C05819636EA700ABDF0F /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F0C05719636EA700ABDF0F /* Character.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
@@ -64,12 +65,14 @@
 /* Begin PBXFileReference section */
 		250C94691974596900C7881D /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		250C946A1974596900C7881D /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
-		250C94701974990700C7881D /* CCActionFollow+CurrentOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCActionFollow+CurrentOffset.h"; path = "Source/CCActionFollow+CurrentOffset.h"; sourceTree = "<group>"; };
-		250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCActionFollow+CurrentOffset.m"; path = "Source/CCActionFollow+CurrentOffset.m"; sourceTree = "<group>"; };
 		25885F7D198F5AE20077BC02 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Source/Enemy.h; sourceTree = "<group>"; };
 		25885F7E198F5AE20077BC02 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Source/Enemy.m; sourceTree = "<group>"; };
 		25B3F62B197F2A2700E3DA83 /* LevelMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelMenu.h; path = Source/LevelMenu.h; sourceTree = "<group>"; };
 		25B3F62C197F2A2700E3DA83 /* LevelMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelMenu.m; path = Source/LevelMenu.m; sourceTree = "<group>"; };
+		25BFAA421991B9A100E5C171 /* HowToPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HowToPlay.h; path = Source/HowToPlay.h; sourceTree = "<group>"; };
+		25BFAA431991B9A100E5C171 /* HowToPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HowToPlay.m; path = Source/HowToPlay.m; sourceTree = "<group>"; };
+		25BFAA461991DD5500E5C171 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Source/Score.h; sourceTree = "<group>"; };
+		25BFAA471991DD5500E5C171 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = Source/Score.m; sourceTree = "<group>"; };
 		25F0C04E1963688D00ABDF0F /* GamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlay.h; path = Source/GamePlay.h; sourceTree = "<group>"; };
 		25F0C04F1963688D00ABDF0F /* GamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamePlay.m; path = Source/GamePlay.m; sourceTree = "<group>"; };
 		25F0C05619636EA700ABDF0F /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -145,8 +148,6 @@
 			children = (
 				25885F7D198F5AE20077BC02 /* Enemy.h */,
 				25885F7E198F5AE20077BC02 /* Enemy.m */,
-				250C94701974990700C7881D /* CCActionFollow+CurrentOffset.h */,
-				250C94711974990700C7881D /* CCActionFollow+CurrentOffset.m */,
 				250C94691974596900C7881D /* Level.h */,
 				250C946A1974596900C7881D /* Level.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
@@ -155,9 +156,13 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				25F0C04E1963688D00ABDF0F /* GamePlay.h */,
 				25F0C04F1963688D00ABDF0F /* GamePlay.m */,
+				25BFAA461991DD5500E5C171 /* Score.h */,
+				25BFAA471991DD5500E5C171 /* Score.m */,
 				25F0C05619636EA700ABDF0F /* Character.h */,
 				25F0C05719636EA700ABDF0F /* Character.m */,
 				25B3F62B197F2A2700E3DA83 /* LevelMenu.h */,
+				25BFAA421991B9A100E5C171 /* HowToPlay.h */,
+				25BFAA431991B9A100E5C171 /* HowToPlay.m */,
 				25B3F62C197F2A2700E3DA83 /* LevelMenu.m */,
 			);
 			name = Source;
@@ -375,11 +380,12 @@
 				250C946B1974596900C7881D /* Level.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				25F0C05819636EA700ABDF0F /* Character.m in Sources */,
+				25BFAA481991DD5500E5C171 /* Score.m in Sources */,
 				25B3F62D197F2A2700E3DA83 /* LevelMenu.m in Sources */,
 				25F0C0501963688D00ABDF0F /* GamePlay.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
+				25BFAA441991B9A100E5C171 /* HowToPlay.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				250C94721974990700C7881D /* CCActionFollow+CurrentOffset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

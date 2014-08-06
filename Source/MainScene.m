@@ -15,7 +15,12 @@
 }
 
 - (void)chooseMode {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"LevelMenu"];
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    CCScene *levelMenuScene = [CCBReader loadAsScene:@"LevelMenu"];
+    [[CCDirector sharedDirector] replaceScene:levelMenuScene];
+}
+
+- (void)howToPlay{
+    CCScene *howtoplayScene = [CCBReader loadAsScene:@"HowToPlay"];
+    [[CCDirector sharedDirector] replaceScene:howtoplayScene];
 }
 @end
