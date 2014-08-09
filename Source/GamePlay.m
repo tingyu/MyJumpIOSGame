@@ -13,7 +13,6 @@
 #import "LevelMenu.h"
 #import "CCActionFollow+CurrentOffset.h"
 
-
 static const CGFloat scrollSpeed = 80.f;
 static CGFloat scrollBackgroundSpeed = 0.f;
 //static const CGFloat scrollSpeed = 0.f;
@@ -46,7 +45,7 @@ NSString *selectedLevel = @"Level1";
     int _score;
     int count;
     CCAction *_followHero;
-    
+
     CCNode *enemy;
     CCNode *bonus;
 }
@@ -99,7 +98,7 @@ NSString *selectedLevel = @"Level1";
     bonus = [CCBReader load:@"Bonus"];
     // position the bonus
     //enemy.position = ccp(150, 150);
-    [self setupRandomPosition:bonus];
+    //[self setupRandomPosition:bonus];
     bonus.physicsBody.collisionType = @"bonus";
     // add the bonus to the physicsNode of this scene (because it has physics enabled)
     [_physicsNode addChild:bonus];
@@ -184,8 +183,11 @@ NSString *selectedLevel = @"Level1";
     if(_hero.position.y > 400){
         _physicsNode.position = ccp(_physicsNode.position.x,  _physicsNode.contentSize.height - _hero.position.y + 200);
     }*/
-   
-    
+    //[_physicsNode runAction:[CCFollow actionWithTarget:_hero  worldBoundary:self.boundingBoxworldboundary:CGRectMake(0, 0, 300, 680)];
+    /*
+     _followHero = [CCActionFollow actionWithTarget:_hero];
+     [_physicsNode runAction:_followHero];*/
+     
     for (CCNode *block in _blocks) {
         // get the world position of the block
         CGPoint blockWorldPosition = [_physicsNode convertToWorldSpace:block.position];
@@ -206,6 +208,15 @@ NSString *selectedLevel = @"Level1";
     if (_hero.position.y < -1*CGRectGetMinY([_physicsNode boundingBox])) {
         [self gameOver];
     }
+    
+    if (_hero.position.y > -1*CGRectGetMinY([_physicsNode boundingBox]) + [_levelNode boundingBox].size.height -10) {
+        [self gameOver];
+    }
+    CCLOG(@"CGRectGetMinY%0.02f", -1*CGRectGetMinY([_physicsNode boundingBox]));
+
+    CCLOG(@"CGRectGetMaxY%0.02f", -1*CGRectGetMinY([_physicsNode boundingBox]) + [_levelNode boundingBox].size.height);
+
+    CCLOG(@"hero%0.02f", _hero.position.y);
 
     count++;
 
@@ -244,6 +255,7 @@ NSString *selectedLevel = @"Level1";
     [nodeB.parent addChild:explosion];
     // finally, remove the destroyed bonus
     [nodeB removeFromParent];
+    [self performSelector:@selector(launchBonus) withObject:nil afterDelay:1.f];
     _score+=3;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     return YES;
