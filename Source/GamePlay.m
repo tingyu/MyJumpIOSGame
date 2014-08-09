@@ -48,6 +48,8 @@ NSString *selectedLevel = @"Level1";
 
     CCNode *enemy;
     CCNode *bonus;
+    
+    CGPoint tmp_position;
 }
 
 
@@ -97,7 +99,7 @@ NSString *selectedLevel = @"Level1";
     // loads the Bonus we have set up in Spritebuilder
     bonus = [CCBReader load:@"Bonus"];
     // position the bonus
-    //enemy.position = ccp(150, 150);
+    bonus.position = tmp_position;
     //[self setupRandomPosition:bonus];
     bonus.physicsBody.collisionType = @"bonus";
     // add the bonus to the physicsNode of this scene (because it has physics enabled)
@@ -251,11 +253,12 @@ NSString *selectedLevel = @"Level1";
     explosion.autoRemoveOnFinish = TRUE;
     // place the particle effect on the bonus position
     explosion.position = nodeB.position;
+    tmp_position = nodeB.position;
     // add the particle effect to the same node the bonus is on
     [nodeB.parent addChild:explosion];
     // finally, remove the destroyed bonus
     [nodeB removeFromParent];
-    [self performSelector:@selector(launchBonus) withObject:nil afterDelay:1.f];
+    [self performSelector:@selector(launchBonus) withObject:nil afterDelay:3.f];
     _score+=3;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     return YES;
